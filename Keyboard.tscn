@@ -1,0 +1,490 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/ANSI_Keyboard_Layout_Diagram_with_Form_Factor.svg" type="Texture" id=1]
+[ext_resource path="res://Keyboard.gd" type="Script" id=2]
+[ext_resource path="res://assets/Roboto-Light.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.196078, 0.196078, 0.196078, 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 14
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 5 )
+Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = SubResource( 1 )
+Button/styles/hover = SubResource( 2 )
+Button/styles/normal = SubResource( 2 )
+Button/styles/pressed = SubResource( 3 )
+
+[node name="Keyboard" type="Node2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="Model" type="Node2D" parent="."]
+position = Vector2( -267, -107.5 )
+
+[node name="Sprite" type="Sprite" parent="Model"]
+visible = false
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 23, 97, 820, 275 )
+
+[node name="Keys" type="Control" parent="Model"]
+margin_right = 616.0
+margin_bottom = 207.0
+mouse_filter = 2
+theme = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="Button" parent="Model/Keys"]
+margin_left = 43.0
+margin_top = 1.0
+margin_right = 79.0
+margin_bottom = 37.0
+focus_mode = 0
+enabled_focus_mode = 0
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="Button" parent="Model/Keys"]
+margin_left = 84.0
+margin_top = 1.0
+margin_right = 120.0
+margin_bottom = 37.0
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="Button" parent="Model/Keys"]
+margin_left = 126.0
+margin_top = 1.0
+margin_right = 162.0
+margin_bottom = 37.0
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4" type="Button" parent="Model/Keys"]
+margin_left = 167.0
+margin_top = 1.0
+margin_right = 203.0
+margin_bottom = 37.0
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5" type="Button" parent="Model/Keys"]
+margin_left = 209.0
+margin_top = 1.0
+margin_right = 245.0
+margin_bottom = 37.0
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="6" type="Button" parent="Model/Keys"]
+margin_left = 251.0
+margin_top = 1.0
+margin_right = 287.0
+margin_bottom = 37.0
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="7" type="Button" parent="Model/Keys"]
+margin_left = 292.0
+margin_top = 1.0
+margin_right = 328.0
+margin_bottom = 37.0
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="8" type="Button" parent="Model/Keys"]
+margin_left = 334.0
+margin_top = 1.0
+margin_right = 370.0
+margin_bottom = 37.0
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="9" type="Button" parent="Model/Keys"]
+margin_left = 375.0
+margin_top = 1.0
+margin_right = 411.0
+margin_bottom = 37.0
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="0" type="Button" parent="Model/Keys"]
+margin_left = 417.0
+margin_top = 1.0
+margin_right = 453.0
+margin_bottom = 37.0
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="q" type="Button" parent="Model/Keys"]
+margin_left = 61.5
+margin_top = 43.5
+margin_right = 97.5
+margin_bottom = 79.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="w" type="Button" parent="Model/Keys"]
+margin_left = 102.5
+margin_top = 43.5
+margin_right = 138.5
+margin_bottom = 79.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="e" type="Button" parent="Model/Keys"]
+margin_left = 143.5
+margin_top = 43.5
+margin_right = 179.5
+margin_bottom = 79.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="r" type="Button" parent="Model/Keys"]
+margin_left = 185.5
+margin_top = 43.5
+margin_right = 221.5
+margin_bottom = 79.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="t" type="Button" parent="Model/Keys"]
+margin_left = 227.5
+margin_top = 43.5
+margin_right = 263.5
+margin_bottom = 79.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="y" type="Button" parent="Model/Keys"]
+margin_left = 269.5
+margin_top = 43.5
+margin_right = 305.5
+margin_bottom = 79.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="u" type="Button" parent="Model/Keys"]
+margin_left = 310.5
+margin_top = 43.5
+margin_right = 346.5
+margin_bottom = 79.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="i" type="Button" parent="Model/Keys"]
+margin_left = 352.5
+margin_top = 43.5
+margin_right = 388.5
+margin_bottom = 79.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="o" type="Button" parent="Model/Keys"]
+margin_left = 393.5
+margin_top = 43.5
+margin_right = 429.5
+margin_bottom = 79.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="p" type="Button" parent="Model/Keys"]
+margin_left = 434.5
+margin_top = 43.5
+margin_right = 470.5
+margin_bottom = 79.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="a" type="Button" parent="Model/Keys"]
+margin_left = 79.5
+margin_top = 85.5
+margin_right = 115.5
+margin_bottom = 121.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="s" type="Button" parent="Model/Keys"]
+margin_left = 121.5
+margin_top = 85.5
+margin_right = 157.5
+margin_bottom = 121.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="d" type="Button" parent="Model/Keys"]
+margin_left = 163.5
+margin_top = 85.5
+margin_right = 199.5
+margin_bottom = 121.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="f" type="Button" parent="Model/Keys"]
+margin_left = 205.5
+margin_top = 85.5
+margin_right = 241.5
+margin_bottom = 121.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="g" type="Button" parent="Model/Keys"]
+margin_left = 247.5
+margin_top = 85.5
+margin_right = 283.5
+margin_bottom = 121.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="h" type="Button" parent="Model/Keys"]
+margin_left = 289.5
+margin_top = 85.5
+margin_right = 325.5
+margin_bottom = 121.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="j" type="Button" parent="Model/Keys"]
+margin_left = 331.5
+margin_top = 85.5
+margin_right = 367.5
+margin_bottom = 121.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="k" type="Button" parent="Model/Keys"]
+margin_left = 373.5
+margin_top = 85.5
+margin_right = 409.5
+margin_bottom = 121.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="l" type="Button" parent="Model/Keys"]
+margin_left = 416.5
+margin_top = 85.5
+margin_right = 452.5
+margin_bottom = 121.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="z" type="Button" parent="Model/Keys"]
+margin_left = 97.5
+margin_top = 127.5
+margin_right = 133.5
+margin_bottom = 163.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x" type="Button" parent="Model/Keys"]
+margin_left = 138.5
+margin_top = 127.5
+margin_right = 174.5
+margin_bottom = 163.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="c" type="Button" parent="Model/Keys"]
+margin_left = 178.5
+margin_top = 127.5
+margin_right = 214.5
+margin_bottom = 163.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="v" type="Button" parent="Model/Keys"]
+margin_left = 218.5
+margin_top = 127.5
+margin_right = 254.5
+margin_bottom = 163.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="b" type="Button" parent="Model/Keys"]
+margin_left = 260.5
+margin_top = 127.5
+margin_right = 296.5
+margin_bottom = 163.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="n" type="Button" parent="Model/Keys"]
+margin_left = 300.5
+margin_top = 127.5
+margin_right = 336.5
+margin_bottom = 163.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="m" type="Button" parent="Model/Keys"]
+margin_left = 341.5
+margin_top = 127.5
+margin_right = 377.5
+margin_bottom = 163.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="space" type="Button" parent="Model/Keys"]
+margin_left = 154.0
+margin_top = 170.0
+margin_right = 409.0
+margin_bottom = 206.0
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="backspace" type="Button" parent="Model/Keys"]
+margin_left = 459.5
+margin_top = 1.0
+margin_right = 532.5
+margin_bottom = 37.0
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enter" type="Button" parent="Model/Keys"]
+margin_left = 457.5
+margin_top = 84.5
+margin_right = 530.5
+margin_bottom = 120.5
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}

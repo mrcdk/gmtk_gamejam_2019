@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/Toon Road Texture.png" type="Texture" id=1]
+[ext_resource path="res://PlayerCar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Phone.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Main.gd" type="Script" id=4]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends ParallaxBackground
+
+func _physics_process(delta):
+	scroll_offset.x -= rand_range(300, 420) * delta
+"
+
+[sub_resource type="CircleShape2D" id=2]
+
+[node name="Main" type="Node"]
+script = ExtResource( 4 )
+
+[node name="SpawnTimer" type="Timer" parent="."]
+process_mode = 0
+
+[node name="RoadParallaxBackground" type="ParallaxBackground" parent="."]
+layer = -1
+script = SubResource( 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="RoadParallaxBackground"]
+motion_mirroring = Vector2( 1536, 0 )
+
+[node name="Road" type="Sprite" parent="RoadParallaxBackground/ParallaxLayer"]
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 10240, 1500 )
+region_filter_clip = true
+
+[node name="Lanes" type="Node" parent="."]
+
+[node name="TopLane" type="Position2D" parent="Lanes"]
+position = Vector2( 128, 40 )
+
+[node name="MiddleLane" type="Position2D" parent="Lanes"]
+position = Vector2( 128, 112 )
+
+[node name="BottomLane" type="Position2D" parent="Lanes"]
+position = Vector2( 128, 188 )
+
+[node name="PlayerCar" parent="." instance=ExtResource( 2 )]
+top_lane_path = NodePath("../Lanes/TopLane")
+middle_lane_path = NodePath("../Lanes/MiddleLane")
+bottom_lane_path = NodePath("../Lanes/BottomLane")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="LeftButton" type="Button" parent="CanvasLayer"]
+margin_left = 1188.0
+margin_top = 230.0
+margin_right = 1218.0
+margin_bottom = 250.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = "<--"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightButton" type="Button" parent="CanvasLayer"]
+margin_left = 1247.0
+margin_top = 230.0
+margin_right = 1277.0
+margin_bottom = 250.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = "-->"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 866.0
+margin_top = 490.0
+margin_right = 1239.0
+margin_bottom = 606.0
+text = "oh no! your kids demand to watch kids movies and you aren't logged in!
+Be a responsible parent and fill the login information but keep an eye on the road and try not to crash!
+You only have one chance to log in. Also, having one finger kinda sucks too so that's another bad thing going on for you. Now... where did you put the password again?"
+align = 3
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="CanvasLayer"]
+position = Vector2( 640, 88 )
+node_a = NodePath("../StaticBody2D")
+node_b = NodePath("../Phone")
+length = 15.0
+rest_length = 20.0
+stiffness = 5.0
+damping = 0.01
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CanvasLayer"]
+position = Vector2( 640, 88 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="Phone" parent="CanvasLayer" instance=ExtResource( 3 )]
+position = Vector2( 640, 317 )
+mass = 1.0
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+[connection signal="pressed" from="CanvasLayer/LeftButton" to="PlayerCar" method="_on_LeftButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/RightButton" to="PlayerCar" method="_on_RightButton_pressed"]

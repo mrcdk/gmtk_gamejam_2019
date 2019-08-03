@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Keyboard.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 266, 171 )
+
+[node name="Phone" type="RigidBody2D"]
+mass = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 159 )
+shape = SubResource( 1 )
+
+[node name="Keyboard" parent="." instance=ExtResource( 1 )]
+position = Vector2( -15, 206 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = -242.0
+margin_right = 248.0
+margin_bottom = 94.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UsernameEdit" type="LineEdit" parent="VBoxContainer"]
+margin_right = 490.0
+margin_bottom = 24.0
+context_menu_enabled = false
+placeholder_text = "Username"
+caret_blink = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 34.0
+margin_right = 490.0
+margin_bottom = 58.0
+
+[node name="PasswordEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+margin_right = 351.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+secret = true
+context_menu_enabled = false
+placeholder_text = "Password"
+caret_blink = true
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer"]
+margin_left = 355.0
+margin_right = 490.0
+margin_bottom = 24.0
+text = "Visible password"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_left = 222.0
+margin_top = 68.0
+margin_right = 268.0
+margin_bottom = 88.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "Login"
