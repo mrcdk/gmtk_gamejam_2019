@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/432886__xtrgamr__lfs-vox6.wav-75d896b9eb1b8e88b6f4036b5ca476c8.sample"
+
+[deps]
+
+source_file="res://assets/432886__xtrgamr__lfs-vox6.wav"
+dest_files=[ "res://.import/432886__xtrgamr__lfs-vox6.wav-75d896b9eb1b8e88b6f4036b5ca476c8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

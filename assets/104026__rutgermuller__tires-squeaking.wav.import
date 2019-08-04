@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/104026__rutgermuller__tires-squeaking.wav-16d2d64622c2f864f6baf8e2c1566dbb.sample"
+
+[deps]
+
+source_file="res://assets/104026__rutgermuller__tires-squeaking.wav"
+dest_files=[ "res://.import/104026__rutgermuller__tires-squeaking.wav-16d2d64622c2f864f6baf8e2c1566dbb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

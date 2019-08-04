@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://QuestionResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+user = "John"
+password = "onefinger"
+questions = [ "My kid's favourite children show protagonist is the protagonist of my username", "When my children are sleeping I also watch their favourite children show. I don't know who said that it was a children show because I enjoy it a lot too", "My kids favourite children show is in the main menu and I don't really know what that means", "The password is the 2nd and 3rd word of my kid's favourite children show together" ]

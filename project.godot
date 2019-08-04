@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Resource",
+"class": "QuestionResource",
+"language": "GDScript",
+"path": "res://QuestionResource.gd"
+} ]
 _global_script_class_icons={
-
+"QuestionResource": ""
 }
 
 [application]
@@ -22,6 +27,11 @@ config/icon="res://icon.png"
 [autoload]
 
 Globals="*res://Globals.gd"
+Music="*res://Music.tscn"
+
+[debug]
+
+gdscript/warnings/enable=false
 
 [display]
 

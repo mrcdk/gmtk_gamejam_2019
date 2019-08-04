@@ -30,6 +30,7 @@ func _scancode(name):
 	
 func _on_button_button_down(button):
 	_send_key(_scancode(button.name), true)
+	$AudioStreamPlayer.play()
 	
 func _on_button_button_up(button):
 	_send_key(_scancode(button.name), false)

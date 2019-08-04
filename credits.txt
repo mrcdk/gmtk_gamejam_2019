@@ -5,3 +5,24 @@ https://upload.wikimedia.org/wikipedia/commons/3/37/ANSI_Keyboard_Layout_Diagram
 https://fonts.google.com/specimen/Roboto
 https://fonts.google.com/specimen/Rock+Salt
 https://opengameart.org/content/cursor
+https://opengameart.org/content/rough-small-signs-symbol-pack
+https://opengameart.org/content/smoke-particle-assets
+https://opengameart.org/content/explosion-particles-sprite-atlas
+https://opengameart.org/content/game-icons
+
+https://freesound.org/people/AndrewAlexander/sounds/369045/
+https://freesound.org/people/Vosvoy/sounds/172096/
+https://freesound.org/people/newagesoup/sounds/348239/
+https://freesound.org/people/Iwiploppenisse/sounds/156031/
+https://freesound.org/people/RutgerMuller/sounds/104026/
+https://freesound.org/people/wrc4all/sounds/403058/
+https://freesound.org/people/kagateni/sounds/404358/
+https://freesound.org/people/xtrgamr/sounds/432886/
+
+Music from https://filmmusic.io
+"Hitman" by Kevin MacLeod (https://incompetech.com)
+License: CC BY (http://creativecommons.org/licenses/by/4.0/)
+
+Music from https://filmmusic.io
+"Brightly Fancy" by Kevin MacLeod (https://incompetech.com)
+License: CC BY (http://creativecommons.org/licenses/by/4.0/)

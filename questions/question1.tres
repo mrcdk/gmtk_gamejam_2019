@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://QuestionResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+user = "mark one digit"
+password = "one5"
+questions = [ "The user is my name, space, and one digit", "The user's one digit is literal. The password one digit is 5", "The password is 1 and one digit", "Password's 1 is one" ]

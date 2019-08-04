@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://QuestionResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+user = "Grandma"
+password = "soup"
+questions = [ "<Grandma>'s chicken [soup] recipe (Found in the Internet)", "1. Put the chicken, carrots, celery and onion in a large pot", "2. Cover with cold water", "3. Simmer until the meat falls off the bones.", "4. Take everything out of the pot and season with salt and pepper to taste.", "User <> Password []" ]

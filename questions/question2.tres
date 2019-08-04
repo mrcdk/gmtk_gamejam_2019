@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://QuestionResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+user = "1finger1"
+password = "1finger1"
+questions = [ "Finger is the key", "Finger is surrounded by ones", "I follow great security measures. I NEVER use the same user and password.", "Yeah, I may lie from time to time", "This has nothing to do with the user and password but I like to write sticky notes down in case someone tries to guess my credentials" ]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/brightly-fancy-by-kevin-macleod.ogg-0cf2cfb22c4c02423cc260382d7aa3b1.oggstr"
+
+[deps]
+
+source_file="res://assets/brightly-fancy-by-kevin-macleod.ogg"
+dest_files=[ "res://.import/brightly-fancy-by-kevin-macleod.ogg-0cf2cfb22c4c02423cc260382d7aa3b1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

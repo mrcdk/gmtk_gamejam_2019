@@ -1,10 +1,14 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/Toon Road Texture.png" type="Texture" id=1]
-[ext_resource path="res://PlayerCar.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Phone.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/403058__wrc4all__laughs.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/369045__andrewalexander__car-atspeed-loop.wav" type="AudioStream" id=3]
 [ext_resource path="res://Main.gd" type="Script" id=4]
-[ext_resource path="res://NoteTest.tscn" type="PackedScene" id=5]
+[ext_resource path="res://PlayerCar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/arrowLeft.png" type="Texture" id=6]
+[ext_resource path="res://assets/arrowRight.png" type="Texture" id=7]
+[ext_resource path="res://Phone.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Settings.tscn" type="PackedScene" id=9]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends ParallaxBackground
@@ -13,23 +17,42 @@ func _physics_process(delta):
 	scroll_offset.x -= rand_range(300, 420) * delta
 "
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="CircleShape2D" id=2]
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 48, 258 )
+[sub_resource type="CircleShape2D" id=3]
 
 [sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 64, 258 )
+
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 678, 46 )
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=6]
 
 [node name="Main" type="Node"]
+pause_mode = 1
 script = ExtResource( 4 )
 
+[node name="ChildrenSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -12.0
+pitch_scale = 1.5
+bus = "InsideCar"
+
+[node name="CarSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -16.0
+pitch_scale = 0.9
+autoplay = true
+
+[node name="WinTween" type="Tween" parent="."]
+playback_process_mode = 0
+
 [node name="SpawnTimer" type="Timer" parent="."]
+process_mode = 0
+
+[node name="GravityTimer" type="Timer" parent="."]
 process_mode = 0
 
 [node name="RoadParallaxBackground" type="ParallaxBackground" parent="."]
@@ -58,7 +81,9 @@ position = Vector2( 128, 112 )
 [node name="BottomLane" type="Position2D" parent="Lanes"]
 position = Vector2( 128, 188 )
 
-[node name="PlayerCar" parent="." instance=ExtResource( 2 )]
+[node name="OtherCars" type="Node" parent="."]
+
+[node name="PlayerCar" parent="." instance=ExtResource( 5 )]
 top_lane_path = NodePath("../Lanes/TopLane")
 middle_lane_path = NodePath("../Lanes/MiddleLane")
 bottom_lane_path = NodePath("../Lanes/BottomLane")
@@ -69,36 +94,41 @@ layer = -2
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 6 )
+custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LeftButton" type="Button" parent="CanvasLayer"]
-margin_left = 3.0
-margin_top = 230.0
-margin_right = 33.0
-margin_bottom = 716.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -135.0
+margin_right = 50.0
+margin_bottom = 351.0
 focus_mode = 0
 enabled_focus_mode = 0
-text = "<--"
+icon = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RightButton" type="Button" parent="CanvasLayer"]
-margin_left = 1245.0
-margin_top = 227.0
-margin_right = 1275.0
-margin_bottom = 720.0
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -135.0
+margin_bottom = 358.0
 focus_mode = 0
 enabled_focus_mode = 0
-text = "-->"
+icon = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
 margin_left = 866.0
 margin_top = 490.0
 margin_right = 1239.0
@@ -128,61 +158,40 @@ default_color = Color( 0.972549, 0.937255, 0.694118, 1 )
 position = Vector2( 640, 88 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PhoneAnchor"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
-[node name="Phone" parent="CanvasLayer" instance=ExtResource( 3 )]
+[node name="Phone" parent="CanvasLayer" instance=ExtResource( 8 )]
 position = Vector2( 640, 317 )
 mass = 1.0
 
 [node name="Notes" type="Node" parent="CanvasLayer"]
 
-[node name="NoteTest" parent="CanvasLayer/Notes" instance=ExtResource( 5 )]
-position = Vector2( 149, 345 )
-rotation = -0.261799
-text = "Testing this"
-
-[node name="NoteTest2" parent="CanvasLayer/Notes" instance=ExtResource( 5 )]
-position = Vector2( 565, 345 )
-rotation = -0.261799
-text = "A long text here, I don't know what to write here so I will write this sentence because I can I guess"
-
-[node name="NoteTest3" parent="CanvasLayer/Notes" instance=ExtResource( 5 )]
-position = Vector2( 149, 491 )
-rotation = -0.261799
-text = "Something"
-
-[node name="NoteTest4" parent="CanvasLayer/Notes" instance=ExtResource( 5 )]
-position = Vector2( 1103, 531 )
-rotation = -0.261799
-text = "Another thing here"
-
-[node name="NoteTest5" parent="CanvasLayer/Notes" instance=ExtResource( 5 )]
-position = Vector2( 797, 345 )
-rotation = -0.261799
-text = "Oh no!"
-
-[node name="Walls" type="Node" parent="CanvasLayer"]
+[node name="Walls" type="Node2D" parent="CanvasLayer"]
+visible = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="CanvasLayer/Walls"]
 position = Vector2( 0, 475 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Walls/StaticBody2D"]
-position = Vector2( -11, 0 )
-shape = SubResource( 3 )
+position = Vector2( -11, -1 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="CanvasLayer/Walls"]
-position = Vector2( 1298, 475 )
+position = Vector2( 1301, 475 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Walls/StaticBody2D2"]
 position = Vector2( -11, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="CanvasLayer/Walls"]
 position = Vector2( 652, 766 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Walls/StaticBody2D3"]
 position = Vector2( -11, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="CanvasLayer/Walls"]
 position = Vector2( 652, 173 )
@@ -191,22 +200,25 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Walls/StaticBody2D4"]
 position = Vector2( -11, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="PointerBody" type="StaticBody2D" parent="CanvasLayer"]
 collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PointerBody"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="PinJointPointer" type="PinJoint2D" parent="CanvasLayer"]
 softness = 16.0
+
+[node name="SettingsLayer" type="CanvasLayer" parent="."]
+pause_mode = 2
+layer = 100
+
+[node name="Settings" parent="SettingsLayer" instance=ExtResource( 9 )]
+visible = false
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="GravityTimer" to="." method="_on_GravityTimer_timeout"]
 [connection signal="pressed" from="CanvasLayer/LeftButton" to="PlayerCar" method="_on_LeftButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/RightButton" to="PlayerCar" method="_on_RightButton_pressed"]
-[connection signal="captured" from="CanvasLayer/Notes/NoteTest" to="." method="_on_NoteTest_captured"]
-[connection signal="captured" from="CanvasLayer/Notes/NoteTest2" to="." method="_on_NoteTest_captured"]
-[connection signal="captured" from="CanvasLayer/Notes/NoteTest3" to="." method="_on_NoteTest_captured"]
-[connection signal="captured" from="CanvasLayer/Notes/NoteTest4" to="." method="_on_NoteTest_captured"]
-[connection signal="captured" from="CanvasLayer/Notes/NoteTest5" to="." method="_on_NoteTest_captured"]

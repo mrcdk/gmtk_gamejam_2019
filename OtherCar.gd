@@ -8,12 +8,21 @@ var lane = 0
 var speed = 0
 
 func _ready():
-	lane = randi() % 3
 	speed = rand_range(180, 380)
 	_change_lane()
 	
 func _process(delta):
 	global_position.x -= speed * delta
+	
+func kill():
+	$CPUParticles2D.emitting = true
+	$CollisionShape2D.set_deferred('disabled', true)
+	$Model.visible = false
+	speed = 0
+	$AudioStreamPlayer.play()
+	yield($AudioStreamPlayer, "finished")
+	queue_free()
+	
 
 func _change_lane():
 	match lane:
@@ -25,3 +34,6 @@ func _change_lane():
 			global_position = bottom_lane.global_position
 			
 	global_position.x = 1500
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()

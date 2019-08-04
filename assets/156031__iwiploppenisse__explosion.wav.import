@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/156031__iwiploppenisse__explosion.wav-e21a4dd69fd555c341f19d6f9eed3a6c.sample"
+
+[deps]
+
+source_file="res://assets/156031__iwiploppenisse__explosion.wav"
+dest_files=[ "res://.import/156031__iwiploppenisse__explosion.wav-e21a4dd69fd555c341f19d6f9eed3a6c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

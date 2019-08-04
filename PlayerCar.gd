@@ -28,15 +28,20 @@ func _change_lane():
 
 func _on_LeftButton_pressed():
 	lane -= 1
+	if lane >= 0 and lane <= 2:
+		$TiresSqueakingSound.play()
 	lane = clamp(lane, 0, 2)
 	_change_lane()
 
 func _on_RightButton_pressed():
 	lane += 1
+	if lane >= 0 and lane <= 2:
+		$TiresSqueakingSound.play()
 	lane = clamp(lane, 0, 2)
 	_change_lane()
 
 
 func _on_PlayerCar_area_entered(area):
 	if area.is_in_group('other_car'):
-		print('oh fuck')
+		Globals.emit_signal("car_crashed")
+		area.kill()
