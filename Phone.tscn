@@ -6,7 +6,18 @@
 extents = Vector2( 266, 171 )
 
 [node name="Phone" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 0
 mass = 0.2
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = -264.0
+margin_top = -15.0
+margin_right = 269.0
+margin_bottom = 335.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 159 )
@@ -27,6 +38,7 @@ __meta__ = {
 [node name="UsernameEdit" type="LineEdit" parent="VBoxContainer"]
 margin_right = 490.0
 margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
 context_menu_enabled = false
 placeholder_text = "Username"
 caret_blink = true
@@ -52,10 +64,11 @@ margin_bottom = 24.0
 text = "Visible password"
 
 [node name="Button" type="Button" parent="VBoxContainer"]
-margin_left = 222.0
+margin_left = 205.0
 margin_top = 68.0
-margin_right = 268.0
+margin_right = 285.0
 margin_bottom = 88.0
 grow_horizontal = 2
+rect_min_size = Vector2( 80, 20 )
 size_flags_horizontal = 4
 text = "Login"
