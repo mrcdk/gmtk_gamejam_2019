@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://QuestionResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+user = "password"
+password = "username"
+questions = [ "Goodness me, I think I screwed it up. I...", "...I... the username is the password ... how can I be so stupid?", "... The password is the username ... I did it wrong, didn't I?
+", "The password is password and the username is username" ]

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://QuestionResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+user = "driver"
+password = "admin"
+questions = [ "Entertainment System Manual
+
+Thank you for choosing this Entertainment System for your car.", "1. What's in the box?
+- A Car's Entertainment System*
+- A Control Panel
+- This Manual
+* Car not included", "2. How to mount
+- Put Entertainment System into your car.
+- Congratulate yourself for a job well done.
+- You are done.
+", "3. Default settings
+Changing these settings is explained in section 4
+User: driver
+password: ***** 
+
+* just kidding, it's admin" ]

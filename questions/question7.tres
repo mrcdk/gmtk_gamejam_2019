@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://QuestionResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+user = "l33t"
+password = "h4ck3r"
+questions = [ "1'm s0 <<l33t>> th4t 3v3n my 3nt3rt41nm3nt syst3m s4ys \"Username is l33t\"", "1'm b4s1c4lly 4 <<h4ck3r>>", "B3st <<h4ck3r>> 3v3r" ]

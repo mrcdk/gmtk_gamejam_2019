@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Roboto-Light.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://MainMenu.gd" type="Script" id=2]
@@ -14,7 +14,10 @@ font_data = ExtResource( 1 )
 [sub_resource type="Theme" id=2]
 default_font = SubResource( 1 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.180392, 0.180392, 0.180392, 1 )
+
+[sub_resource type="DynamicFont" id=4]
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )
@@ -23,22 +26,21 @@ font_data = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = SubResource( 2 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 1273.0
-margin_bottom = 713.0
+margin_right = 1280.0
+margin_bottom = 720.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 208.0
-margin_top = 175.0
-margin_right = 1057.0
-margin_bottom = 530.0
+margin_left = 215.0
+margin_top = 182.0
+margin_right = 1064.0
+margin_bottom = 537.0
 rect_min_size = Vector2( 550, 0 )
 custom_constants/separation = 48
 
@@ -58,7 +60,7 @@ text = "PLAY!"
 margin_top = 248.0
 margin_right = 849.0
 margin_bottom = 355.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "You are Mark and you only have one finger. While enjoying a beautiful ride with your kids to an undisclosed location the car's entertainment system lost connection to the main servers and you got logged off it! What a tragedy! Now your kids DEMAND you to log in again so they can continue watching their favourite children show \"Only one finger John\". Be a considerate parent and drive while trying to log in with one finger only (because you only have one I don't know if you noticed) but be careful not to crash! or the entertainment system will crash too!"
 align = 3
 autowrap = true

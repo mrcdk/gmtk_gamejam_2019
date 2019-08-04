@@ -8,6 +8,7 @@ var questions:Array = []
 var current_question:QuestionResource = null
 
 func _init():
+	randomize()
 	_fill_questions()
 
 func _enter_tree():

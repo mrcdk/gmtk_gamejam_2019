@@ -1,3 +1,5 @@
+Graphics sources and copyright:
+
 https://opengameart.org/content/toon-road-texture
 https://opengameart.org/content/car-sedan
 https://opengameart.org/content/car-pickup
@@ -10,6 +12,9 @@ https://opengameart.org/content/smoke-particle-assets
 https://opengameart.org/content/explosion-particles-sprite-atlas
 https://opengameart.org/content/game-icons
 
+
+Sounds sources and copyright:
+
 https://freesound.org/people/AndrewAlexander/sounds/369045/
 https://freesound.org/people/Vosvoy/sounds/172096/
 https://freesound.org/people/newagesoup/sounds/348239/
@@ -18,6 +23,9 @@ https://freesound.org/people/RutgerMuller/sounds/104026/
 https://freesound.org/people/wrc4all/sounds/403058/
 https://freesound.org/people/kagateni/sounds/404358/
 https://freesound.org/people/xtrgamr/sounds/432886/
+
+
+Music sources and copyright:
 
 Music from https://filmmusic.io
 "Hitman" by Kevin MacLeod (https://incompetech.com)

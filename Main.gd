@@ -28,7 +28,6 @@ func _ready():
 	ChildrenSound.volume_db = -12
 	ChildrenSound.play()
 	
-	randomize()
 	Globals.connect("login_succeeded", self, "_on_login_succeeded")
 	_on_SpawnTimer_timeout()
 	_on_GravityTimer_timeout()
