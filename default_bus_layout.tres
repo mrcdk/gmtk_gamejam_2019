@@ -3,13 +3,13 @@
 [sub_resource type="AudioEffectBandLimitFilter" id=1]
 resource_name = "BandLimitFilter"
 
-[sub_resource type="AudioEffectLimiter" id=6]
+[sub_resource type="AudioEffectLimiter" id=2]
 resource_name = "Limiter"
 ceiling_db = -12.0
 soft_clip_db = 1.0
 soft_clip_ratio = 7.0
 
-[sub_resource type="AudioEffectChorus" id=2]
+[sub_resource type="AudioEffectChorus" id=3]
 resource_name = "Chorus"
 voice_count = 4
 dry = 0.0
@@ -49,7 +49,7 @@ bus/1/volume_db = -4.5012
 bus/1/send = "Master"
 bus/1/effect/0/effect = SubResource( 1 )
 bus/1/effect/0/enabled = true
-bus/1/effect/1/effect = SubResource( 6 )
+bus/1/effect/1/effect = SubResource( 2 )
 bus/1/effect/1/enabled = true
 bus/2/name = "InsideCar"
 bus/2/solo = false
@@ -57,7 +57,7 @@ bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = -5.93425
 bus/2/send = "Master"
-bus/2/effect/0/effect = SubResource( 2 )
+bus/2/effect/0/effect = SubResource( 3 )
 bus/2/effect/0/enabled = true
 bus/2/effect/1/effect = SubResource( 4 )
 bus/2/effect/1/enabled = true
